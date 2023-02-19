@@ -1,1 +1,59 @@
+impor java.util.*;
+import java.io.*;
 
+class Main {
+  static int tec;
+  static double num, num2, area,perimetro,radio,π=3.14;
+  
+  static BufferedReader teclado = new BufferedReader (new InputStreamReader(System.in));
+  public static void main(String[] args) throws IOException {
+    System.out.println("Desarrollado por Jefferson Stuwartd cardozo Lozada");
+    System.out.println("Menu: \n"+
+                      "1. Cuadrado. \n"+
+                      "2. Rectangulo. \n"+
+                      "3. Circulo. \n"+
+                      "4. Triangulo. \n"+
+                      "5. Terminar. \n");
+   
+    tec = Integer.parseInt(teclado.readLine());
+    switch(tec){
+      case 1:
+        System.out.println("Ingrese un lado del cuadrado: ");
+        num = Double.parseDouble(teclado.readLine());
+        area = num*num;
+        perimetro = num*4; 
+        System.out.println("El area del cuadrado es: "+area+"\n"+
+                           "El perimetro del cuadrado es: "+perimetro);
+        break;
+      
+      case 2:
+        System.out.println("Ingrese el largo del rectangulo: ");
+        num = Double.parseDouble(teclado.readLine());
+        System.out.println("Ingrese el ancho del rectangulo: ");
+        num2 = Double.parseDouble(teclado.readLine());
+        area = num * num2;
+        perimetro = 2 *(num+num2);
+        System.out.println("El area del rectangulo es: "+area);
+        System.out.println("El perimetro del rectangulo es: "+perimetro);
+        break;
+      case 3:
+        System.out.println("Ingrese el Radio del circulo: ");
+        num = Double.parseDouble(teclado.readLine());
+        area = π * (num*num);
+        perimetro = (2*π) * num; 
+        System.out.println("El area del circulo es: "+area);
+        System.out.println("El perimetro del circulo es: "+perimetro);
+        break;
+      case 4:
+        System.out.println("Ingrese la base del triangulo: ");
+        num = Double.parseDouble(teclado.readLine());
+        System.out.println("Ingrese la altura del triangulo: ");
+        num2 = Double.parseDouble(teclado.readLine());
+        area = (num * num2)/ 2;
+        perimetro = num*3; 
+        System.out.println("El area del circulo es: "+ area);
+        System.out.println("El perimetro del circulo es: "+ perimetro);
+        break;
+      }
+  }
+}
